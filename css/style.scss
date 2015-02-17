@@ -1,0 +1,51 @@
+
+
+/*----------------------
+---- Global Styles
+----------------------*/
+html, body{
+	height:100%;
+}
+
+
+article{
+	height:100%;
+}
+
+.seperator{
+	height:75%;
+	padding:5em 0;
+}
+
+/*** Colors ***/
+$aqua: #05B88E;
+$blueDeep: #233D5F;
+$turquoise: #04C1DC;
+$orange: #FF8824;
+$green: #8FCA42;
+
+/*----------------------
+---- Typographic Styles
+----------------------*/
+
+/*----------------------
+---- Layout Styles
+----------------------*/
+
+/*----------------------
+---- Section Styles
+----------------------*/
+
+/*** Seperators ***/
+.seperator{
+	background: $blueDeep;
+	&~.seperator{
+		background: $aqua;
+		&~.seperator{
+			background: $turquoise;
+			&~.seperator{
+				background: $green;
+			}
+		}
+	}
+}
