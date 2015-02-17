@@ -3,18 +3,8 @@
 /*----------------------
 ---- Global Styles
 ----------------------*/
-html, body{
-	height:100%;
-}
-
-
-article{
-	height:100%;
-}
-
-.seperator{
-	height:75%;
-	padding:5em 0;
+html, body {
+  height:100%;
 }
 
 /*** Colors ***/
@@ -24,28 +14,124 @@ $turquoise: #04C1DC;
 $orange: #FF8824;
 $green: #8FCA42;
 
+$light: rgb(200,200,200);
+$mid: rgb(128,128,128);
+$dark: rgb(25,25,25);
+
+@mixin fadeText($color, $amount) {
+  color: fade-out($color, $amount);
+}
+
+.darken {
+  @include fadeText( $light, .2 )
+}
+
+
+
+/*----------------------
+---- Mixins
+----------------------*/
+
+@mixin padTopBot($pad) {
+  padding-top: $pad;
+  padding-bottom: $pad;
+}
+
+@mixin serif {
+  font-family: "Libre Baskerville", "Baskerville", "Palatino Linotype", serif;
+}
+
+@mixin sans {
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Tahoma", sans-serif;
+}
+
 /*----------------------
 ---- Typographic Styles
 ----------------------*/
+
+body {
+  font-size: 1.6em;
+  @include sans;
+}
+
+h1 {
+  line-height: 1.6em;
+  font-size:3em;
+  @include serif;
+}
+
+h2 {
+  font-size:2.5em;
+  @include serif;
+}
+
+p {
+  margin-left:2em;
+}
+
+.seperator blockquote{
+
+  @include serif;
+  font-size: 2.8em;
+
+  footer {
+    font-size: .4em;
+  }
+}
 
 /*----------------------
 ---- Layout Styles
 ----------------------*/
 
+
+article {
+  @include padTopBot(5em);
+  height:100%;
+}
+
+.seperator {
+  @include padTopBot(5em);
+  height:75%;
+}
+
+
 /*----------------------
 ---- Section Styles
 ----------------------*/
 
+/*** Navigation ***/
+
 /*** Seperators ***/
-.seperator{
-	background: $blueDeep;
-	&~.seperator{
-		background: $aqua;
-		&~.seperator{
-			background: $turquoise;
-			&~.seperator{
-				background: $green;
-			}
-		}
-	}
+.seperator {
+  color: fade-out( lighten($light, 25%), .2);
+  background-color: darken($blueDeep, 12%);
+
+  & ~ .seperator {
+    background-color: darken($aqua, 20%);
+
+    & ~ .seperator {
+      background-color: darken($turquoise, 20%);
+
+      & ~ .seperator {
+        background-color: darken($green, 35%);
+
+      }
+    }
+  }
+
+  blockquote {
+    border-left:none;
+  }
+}
+
+
+/*** Footer ***/
+
+footer.footer-page {
+
+  @include padTopBot(5em);
+
+  background-color: darken($mid, 25%);
+  color: lighten($light, 25%);
+
 }
