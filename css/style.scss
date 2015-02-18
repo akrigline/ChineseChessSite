@@ -11,8 +11,10 @@ $blueDeep: #233D5F;
 $turquoise: #04C1DC;
 $orange: #FF8824;
 $green: #8FCA42;
+$red: #CA2124;
 
-$light: rgb(200,200,200);
+
+$light: rgb(255,255,255);
 $mid: rgb(128,128,128);
 $dark: rgb(25,25,25);
 
@@ -24,8 +26,15 @@ $dark: rgb(25,25,25);
   background-color:fade-out($color, .1);
 }
 
-.darken {
+.faded {
   @include fadeText( $light, .2 )
+}
+
+.icon{
+  color: $dark;
+}
+.icon-red{
+  color: $red;
 }
 
 /*----------------------
@@ -186,6 +195,68 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   background-position: 110% center;
 }
 
+/*** Pieces ***/
+#thePieces {
+
+}
+
+.pieces {
+  ul {
+    li {
+      display:inline-block;
+      width:25%;
+      float:left;
+      text-align: center;
+
+      margin-left:12.5%;
+
+      a {
+        font-size:2.2em;
+        text-align:center;
+
+        width:1.5em;
+        height:1.5em;
+        display: inline-block;
+        
+        border-radius:50%;
+        border: .1em solid $dark;
+        &:hover{
+          background-color:$red;
+          border-color:$red;
+          .icon{
+            color:$light;
+          }
+        }
+      }
+
+      & + li {
+        margin-left:0;
+      }
+
+    }
+  }
+
+
+  section {
+    .icon {
+      display:block;
+      width:100%;
+      font-size:4em;
+      text-align:center;
+    }
+  }
+}
+
+@media screen and (min-width:768px) {
+  .pieces {
+    ul {
+      li {
+        width:14%;
+        margin-left:0;
+      }
+    }
+  }
+}
 
 /*** Footer ***/
 
@@ -222,7 +293,6 @@ footer.footer-page {
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: .2em;
   text-align: center;
  
   /* For safety - reset parent styles, that can break glyph codes*/
@@ -231,22 +301,18 @@ footer.footer-page {
      
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
- 
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
 }
  
 .icon-chariot-rd:before { content: '\e800'; }
 .icon-horse-rd:before { content: '\e801'; }
-.icon-canon-rd:before { content: '\e802'; }
+.icon-cannon-rd:before { content: '\e802'; }
 .icon-elephant-bk:before { content: '\e803'; }
 .icon-pawn-rd:before { content: '\e804'; }
 .icon-general-rd:before { content: '\e805'; }
 .icon-chariot-bk:before { content: '\e806'; }
 .icon-horse-bk:before { content: '\e807'; }
-.icon-canon-bk:before { content: '\e808'; }
-.icon-elephant-bk-1:before { content: '\e809'; }
+.icon-cannon-bk:before { content: '\e808'; }
+.icon-elephant-rd:before { content: '\e809'; }
 .icon-pawn-bk:before { content: '\e80a'; }
 .icon-general-bk:before { content: '\e80b'; }
 .icon-minister-bk:before { content: '\e80c'; }
