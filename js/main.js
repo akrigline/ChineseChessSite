@@ -16,3 +16,13 @@ $(document).ready(function() {
         }
     });
 });
+
+
+$(document).ready(function(){
+    $('.pieces').bxSlider({
+        mode: 'fade',
+        speed: 300,
+        controls: true,
+        pagerCustom: '.pieces-list'
+    });
+});

@@ -65,17 +65,29 @@ body {
 
 h1 {
   line-height: 1.6em;
-  font-size:3em;
+  font-size: 3em;
   @include serif;
 }
 
 h2 {
-  font-size:2.5em;
+  font-size: 2.5em;
   @include serif;
 }
 
+h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+  @include serif;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 600;
+  @include sans;
+}
+
 p {
-  margin-left:2em;
+  margin-left: 2em;
 }
 
 .seperator blockquote{
@@ -183,6 +195,9 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
   blockquote {
     border-left:none;
+    footer{
+      color: fade-out( lighten($light, 25%), .4);
+    }
   }
 }
 
@@ -200,7 +215,7 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
 }
 
-.pieces {
+.pieces-list {
   ul {
     li {
       display:inline-block;
@@ -220,9 +235,10 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
         
         border-radius:50%;
         border: .1em solid $dark;
-        &:hover{
-          background-color:$red;
-          border-color:$red;
+        &:hover,
+        &.active{
+          background-color:$dark;
+          border-color:$dark;
           .icon{
             color:$light;
           }
@@ -235,8 +251,8 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
     }
   }
-
-
+}
+.pieces{
   section {
     .icon {
       display:block;
@@ -244,11 +260,15 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
       font-size:4em;
       text-align:center;
     }
+    h4 {
+      margin-left:2em;
+      margin-bottom: 0;
+    }
   }
 }
 
 @media screen and (min-width:768px) {
-  .pieces {
+  .pieces-list {
     ul {
       li {
         width:14%;
