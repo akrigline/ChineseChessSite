@@ -108,13 +108,21 @@ p {
 article {
   @include padTopBot(5em);
   height:100%;
+  position:relative;
 }
 
 .seperator {
-  height:40%;
-  @include padTopBot(4em);
+  @include padTopBot(15%);
 }
 
+.svg-top,
+.svg-bot {
+  width:100%;
+}
+.svg-top{
+  position:absolute;
+  bottom:0;
+}
 
 /*----------------------
 ---- Section Aesthetics
@@ -258,7 +266,7 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
       margin-left:12.5%;
 
       a {
-        font-size:2.2em;
+        font-size:3em;
         text-align:center;
 
         width:1.5em;
@@ -305,6 +313,9 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
       li {
         width:14%;
         margin-left:0;
+        a{
+          font-size:2.2em;
+        }
       }
     }
   }
@@ -318,7 +329,7 @@ footer.footer-page {
   padding-bottom:3em;
 
   background-image: url(../img/footer.svg);
-  background-size: 110%;
+  background-size:cover;
   background-position:center center;
   color: lighten($light, 25%);
 
