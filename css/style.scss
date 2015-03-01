@@ -111,8 +111,8 @@ article {
 }
 
 .seperator {
-  @include padTopBot(5em);
-  height:75%;
+  height:40%;
+  @include padTopBot(4em);
 }
 
 
@@ -176,6 +176,38 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 }
 
 /*** Seperators ***/
+.svg-top,
+.svg-bot{
+  opacity:.91;
+  overflow: hidden;
+  svg{
+    width:110%;
+    margin: -5px -5%;
+    display: block;
+  }
+}
+.deepBlue{
+  path{
+    fill: darken($blueDeep, 12%);
+  }
+}
+.aqua{
+  path{
+    fill: darken($aqua, 20%);
+  }
+}
+.turquoise{
+  path{
+    fill: darken($turquoise, 20%);
+  }
+}
+.green{
+  path{
+    fill: darken($green, 35%);
+  }
+}
+
+
 .seperator {
   color: fade-out( lighten($light, 25%), .2);
   @include fadeBG( darken($blueDeep, 12%) );
@@ -282,9 +314,12 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
 footer.footer-page {
 
-  @include padTopBot(5em);
+  padding-top:7em;
+  padding-bottom:3em;
 
-  background-color: darken($mid, 25%);
+  background-image: url(../img/footer.svg);
+  background-size: 110%;
+  background-position:center center;
   color: lighten($light, 25%);
 
 }
