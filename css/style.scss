@@ -11,7 +11,7 @@ $blueDeep: #233D5F;
 $turquoise: #04C1DC;
 $orange: #FF8824;
 $green: #8FCA42;
-$red: #CA2124;
+$red: rgb(105,52,51);
 
 
 $light: rgb(255,255,255);
@@ -117,6 +117,7 @@ article {
 
 .svg-top,
 .svg-bot {
+  z-index:16;
   width:100%;
 }
 .svg-top{
@@ -146,8 +147,59 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 .top-nav {
   margin-bottom:0;
   background:none;
-  border-bottom:none;
+  border:none;
   height:5em;
+
+  background-image:url(../img/header-nav-bg.svg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  .navbar-nav > li > a{
+    color:$light;
+
+    &:hover,
+    &.active,
+    &:focus{
+      color:$dark;
+      background-color:$light;
+    }
+  }
+
+}
+
+.navbar-collapse {
+  margin-top:2.5em;
+  margin-left:0 !important;
+  margin-right: 0 !important;
+  z-index:999;
+
+  &.collapsing{
+    border:15px solid $red;
+    background:none;
+  }
+
+  transition:all 300ms;
+
+  &.in{
+    border: 15px $red solid;
+  }
+
+  box-shadow:none;
+  background-color:lighten($red, 15);
+}
+
+
+.navbar-default .navbar-toggle{
+  border:none;
+  &:focus,
+  &:hover{
+    background:transparent;
+  }
+  .icon-bar{
+    width:2em;
+    margin:.4em 0;
+    background-color:$light;
+  }
 }
 
 .navbar-brand {
@@ -183,34 +235,41 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   background-repeat: no-repeat;
 }
 
+
+@media screen and (min-width:768px){
+  .navbar-collapse {
+    background:none;
+    margin-top:0;
+  }
+}
 /*** Seperators ***/
 .svg-top,
-.svg-bot{
+.svg-bot {
   opacity:.91;
   overflow: hidden;
-  svg{
+  svg {
     width:110%;
     margin: -5px -5%;
     display: block;
   }
 }
-.deepBlue{
-  path{
+.deepBlue {
+  path {
     fill: darken($blueDeep, 12%);
   }
 }
-.aqua{
-  path{
+.aqua {
+  path {
     fill: darken($aqua, 20%);
   }
 }
-.turquoise{
-  path{
+.turquoise {
+  path {
     fill: darken($turquoise, 20%);
   }
 }
-.green{
-  path{
+.green {
+  path {
     fill: darken($green, 35%);
   }
 }
