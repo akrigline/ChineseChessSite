@@ -107,8 +107,8 @@ p {
 
 article {
   @include padTopBot(5em);
-  height:100%;
-  position:relative;
+  height: 100%;
+  position: relative;
 }
 
 .seperator {
@@ -117,12 +117,11 @@ article {
 
 .svg-top,
 .svg-bot {
-  z-index:16;
-  width:100%;
+  width: 100%;
 }
 .svg-top{
-  position:absolute;
-  bottom:0;
+  position: absolute;
+  bottom: 0;
 }
 
 /*----------------------
@@ -145,71 +144,71 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 /*** Navigation ***/
 
 .top-nav {
-  margin-bottom:0;
-  background:none;
-  border:none;
-  height:5em;
+  margin-bottom: 0;
+  background: none;
+  border: none;
+  height: 5em;
 
-  background-image:url(../img/header-nav-bg.svg);
+  background-image: url(../img/header-nav-bg.svg);
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
   .navbar-nav > li > a{
-    color:$light;
+    color: $light;
 
     &:hover,
     &.active,
     &:focus{
-      color:$dark;
-      background-color:$light;
+      color: $dark;
+      background-color: $light;
     }
   }
 
 }
 
 .navbar-collapse {
-  margin-top:2.5em;
-  margin-left:0 !important;
+  margin-top: 2.5em;
+  margin-left: 0 !important;
   margin-right: 0 !important;
-  z-index:999;
+  z-index: 999;
 
   &.collapsing{
-    border:15px solid $red;
-    background:none;
+    border: 15px solid $red;
+    background: none;
   }
 
-  transition:all 300ms;
+  transition: all 300ms;
 
   &.in{
     border: 15px $red solid;
   }
 
-  box-shadow:none;
-  background-color:lighten($red, 15);
+  box-shadow: none;
+  background-color: lighten($red, 15);
 }
 
 
 .navbar-default .navbar-toggle{
-  border:none;
+  border: none;
   &:focus,
   &:hover{
-    background:transparent;
+    background: transparent;
   }
   .icon-bar{
-    width:2em;
-    margin:.4em 0;
-    background-color:$light;
+    width: 2em;
+    margin: .4em 0;
+    background-color: $light;
   }
 }
 
 .navbar-brand {
   svg {
-    height:4em;
-    width:auto;
-    float:left;
+    height: 4em;
+    width: auto;
+    float: left;
     path {
       transition: fill 300ms;
-      fill:#fff;
+      fill: #fff;
     }
   }
 }
@@ -223,13 +222,13 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 }
 
 .nav-header {
-  width:100%;
-  height:7em;
+  width: 100%;
+  height: 7em;
 
-  position:absolute;
-  top:0;
+  position: absolute;
+  top: 0;
 
-  background-image:url(../img/nav-bg.svg);
+  background-image: url(../img/nav-bg.svg);
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -238,17 +237,17 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
 @media screen and (min-width:768px){
   .navbar-collapse {
-    background:none;
-    margin-top:0;
+    background: none;
+    margin-top: 0;
   }
 }
 /*** Seperators ***/
 .svg-top,
 .svg-bot {
-  opacity:.91;
+  opacity: .91;
   overflow: hidden;
   svg {
-    width:110%;
+    width: 110%;
     margin: -5px -5%;
     display: block;
   }
@@ -293,7 +292,7 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   }
 
   blockquote {
-    border-left:none;
+    border-left: none;
     footer{
       color: fade-out( lighten($light, 25%), .4);
     }
@@ -302,11 +301,16 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
 /*** Intro ***/
 #intro {
-  padding-top:7em;
+  padding-top: 14em;
   background-image: url(../img/xiangqi_vert.svg);
   background-repeat: no-repeat;
   background-size: auto 115%;
   background-position: 110% center;
+}
+
+/*** Board ***/
+#theBoard {
+  padding-top:8em;
 }
 
 /*** Pieces ***/
@@ -317,35 +321,35 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 .pieces-list {
   ul {
     li {
-      display:inline-block;
-      width:25%;
-      float:left;
+      display: inline-block;
+      width: 25%;
+      float: left;
       text-align: center;
 
-      margin-left:12.5%;
+      margin-left: 12.5%;
 
       a {
-        font-size:3em;
-        text-align:center;
+        font-size: 3em;
+        text-align: center;
 
-        width:1.5em;
-        height:1.5em;
+        width: 1.5em;
+        height: 1.5em;
         display: inline-block;
         
-        border-radius:50%;
+        border-radius: 50%;
         border: .1em solid $dark;
         &:hover,
         &.active{
-          background-color:$dark;
-          border-color:$dark;
+          background-color: $dark;
+          border-color: $dark;
           .icon{
-            color:$light;
+            color: $light;
           }
         }
       }
 
       & + li {
-        margin-left:0;
+        margin-left: 0;
       }
 
     }
@@ -354,13 +358,13 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 .pieces{
   section {
     .icon {
-      display:block;
-      width:100%;
-      font-size:4em;
-      text-align:center;
+      display: block;
+      width: 100%;
+      font-size: 4em;
+      text-align: center;
     }
     h4 {
-      margin-left:2em;
+      margin-left: 2em;
       margin-bottom: 0;
     }
   }
@@ -370,10 +374,10 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   .pieces-list {
     ul {
       li {
-        width:14%;
-        margin-left:0;
+        width: 14%;
+        margin-left: 0;
         a{
-          font-size:2.2em;
+          font-size: 2.2em;
         }
       }
     }
@@ -384,12 +388,12 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
 footer.footer-page {
 
-  padding-top:7em;
-  padding-bottom:3em;
+  padding-top: 7em;
+  padding-bottom: 3em;
 
   background-image: url(../img/footer.svg);
-  background-size:cover;
-  background-position:center center;
+  background-size: cover;
+  background-position: center center;
   color: lighten($light, 25%);
 
 }
