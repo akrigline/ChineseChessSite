@@ -180,24 +180,24 @@
         <h2>The Board</h2>
         <p>Chinese Chess is played on a board with 2 sides, 9 columns by 10 rows. Unlike Inernational Chess, the pieces sit on the intersections of the lines as opposed to inside the squares. This effectively makes the board more spacious than in International Chess.</p>
 
-        <section data-demo="img/gifs/the_river.gif" class="demo-active">
+        <section data-demo="img/gifs/the_river.gif" class="demo-hover demo-active" data-collection="the_board">
           <h3>The River</h3>
           <p>A river runs between the two sides, traditionally representing a river significant in the Chu-Han war in Ancient China. The river mainly serves to divide the two sides, but also affects the movement of two pieces.</p>
         </section><!-- /River -->
 
-        <section data-demo="img/gifs/palace.gif">
+        <section data-demo="img/gifs/palace.gif" class="demo-hover" data-collection="the_board">
           <h3>The Palace</h3>
           <p>This 3 by 3 square is the only place that the General for each side can reside. Both he and his advisors must remain inside the palace at all times.</p>
         </section><!-- /Palace -->
 
-        <section data-demo="img/gifs/starters.gif">
+        <section data-demo="img/gifs/starters.gif" class="demo-hover" data-collection="the_board">
           <h3>The Starting Positions</h3>
           <p>The board marks out where the pawns and the cannons start with the crosses, but these spots have no other significance in the game.</p>
         </section><!-- /Starters -->
       </div><!-- offset -->
     </div><!-- left side -->
     <figure class="col-xs-12 col-md-5">
-      <img src="img/gifs/the_board.gif" class="demonstration">
+      <img src="img/gifs/the_board.gif" class="demonstration" id="the_board">
     </figure>
   </div>
   <div class="svg-top turquoise">
@@ -275,11 +275,14 @@
           <div class="col-xs-10">
             <h3>The General</h3>
 
+            <div class="demo-hover" data-demo="img/gifs/general-move.gif" data-collection="the_pieces">
               <h4>Movement</h4>
               <p>The General must remain within his palace at all times. Within it, he can move one space along either the rows or the columns, but never diagonally.</p>
-
+            </div>
+            <div class="demo-hover" data-demo="img/gifs/general-attack.gif" data-collection="the_pieces">
               <h4>Attack</h4>
               <p>The general can attack any space it can move into, with one exception. When two generals are facing each other with an unobstructed view, they can kill one another. This move is known as the "flying general" move and is the only time the general can leave the palace.</p>
+            </div>
 
           </div>
         </section><!-- general -->
@@ -290,12 +293,12 @@
           </div>
           <div class="col-xs-10">
             <h3>The Minister</h3>
-            
-            <div class="demo-hover" data-demo="">  
+
+            <div class="demo-hover" data-demo="img/gifs/minister-move.gif" data-collection="the_pieces">
               <h4>Movement</h4>
               <p>Ministers are confined to the palace with the general. They can only move 1 space diagonally along the lines within the palace.</p>
             </div>
-            <div class="demo-hover" data-demo"">
+            <div class="demo-hover" data-demo="img/gifs/minister-attack.gif" data-collection="the_pieces">
               <h4>Attack</h4>
               <p>Ministers can attack any space they can move into.</p>
             </div>
@@ -309,12 +312,12 @@
           </div>
           <div class="col-xs-10">
             <h3>The Elephant</h3>
-            
-            <div class="demo-hover" data-demo="">  
+
+            <div class="demo-hover" data-demo="img/gifs/xiang-move.gif" data-collection="the_pieces">
               <h4>Movement</h4>
               <p>The elephant moves diagonally two spaces at a time. They cannot cross the river and thus are strictly defensive units. Their way can be obstructed if a piece is located one space diagonally from their location.</p>
             </div>
-            <div class="demo-hover" data-demo"">
+            <div class="demo-hover" data-demo="img/gifs/xiang-attack.gif" data-collection="the_pieces">
               <h4>Attack</h4>
               <p>Elephants can attack any space they can move into.</p>
             </div>
@@ -328,12 +331,12 @@
           </div>
           <div class="col-xs-10">
             <h3>The Horse</h3>
-            
-            <div class="demo-hover" data-demo="">  
+
+            <div class="demo-hover" data-demo="img/gifs/ma-move.gif" data-collection="the_pieces">
               <h4>Movement</h4>
               <p>The horse moves one step along a line, then one step diagonally away from its starting position. They can be blocked if a piece occupies a space adjacent to the horse’s starting position.</p>
             </div>
-            <div class="demo-hover" data-demo"">
+            <div class="demo-hover" data-demo="img/gifs/ma-attack.gif" data-collection="the_pieces">
               <h4>Attack</h4>
               <p>Horses can attack any space they can move into.</p>
             </div>
@@ -347,12 +350,12 @@
           </div>
           <div class="col-xs-10">
             <h3>The Chariot</h3>
-            
-            <div class="demo-hover" data-demo="">  
+
+            <div class="demo-hover" data-demo="img/gifs/che-move.gif" data-collection="the_pieces">
               <h4>Movement</h4>
               <p>The chariot can move along rows or columns until it is obstructed.</p>
             </div>
-            <div class="demo-hover" data-demo"">
+            <div class="demo-hover" data-demo="img/gifs/che-attack.gif" data-collection="the_pieces">
               <h4>Attack</h4>
               <p>Chariots can attack any space they can move into.</p>
             </div>
@@ -366,12 +369,12 @@
           </div>
           <div class="col-xs-10">
             <h3>The Cannon</h3>
-            
-            <div class="demo-hover" data-demo="">  
+
+            <div class="demo-hover" data-demo="img/gifs/pao-move.gif" data-collection="the_pieces">
               <h4>Movement</h4>
               <p>Similar to the chariot, the cannon can move until it is obstructed along rows or columns.</p>
             </div>
-            <div class="demo-hover" data-demo"">
+            <div class="demo-hover" data-demo="img/gifs/pao-attack.gif" data-collection="the_pieces">
               <h4>Attack</h4>
               <p>To attack a piece, the cannon must have a piece between it and the target. A cannon cannot attack a piece unless there is exactly one other piece between it and the cannon.</p>
             </div>
@@ -385,12 +388,12 @@
           </div>
           <div class="col-xs-10">
             <h3>The Pawn</h3>
-            
-            <div class="demo-hover" data-demo="">  
+
+            <div class="demo-hover" data-demo="img/gifs/bing-move.gif" data-collection="the_pieces">
               <h4>Movement</h4>
               <p>The pawn is special in Chinese Chess as its movement changes after it crosses the river. Before crossing, the pawn can only move forward (toward the river) one space at a time. After crossing the river, it can move forward (away from the river) or side to side one space at a time.</p>
             </div>
-            <div class="demo-hover" data-demo"">
+            <div class="demo-hover" data-demo="img/gifs/bing-attack.gif" data-collection="the_pieces">
               <h4>Attack</h4>
               <p>Pawns can attack any space they can move into.</p>
             </div>
@@ -402,7 +405,7 @@
     <!-- left side -->
 
     <figure class="col-xs-12 col-md-5">
-      <img src="img/gifs/ma-attack.gif" class="demonstration">
+      <img src="img/gifs/the_pieces.gif" class="demonstration" id="the_pieces">
     </figure>
 
   </div>
@@ -454,23 +457,23 @@
       <h2>The Rules</h2>
       <p>Traditionally the red team goes first. The objective is to corner and destroy the enemy general. The game is played in sequence until the conditions for ending the game are fullfilled. Each player moves one piece per turn.</p>
 
-      <div data-demo="img/gifs/che-attack.gif">
+      <div class="demo-hover" data-demo="img/gifs/che-attack.gif" data-collection="the_rules">
         <h3>Attacking</h3>
         <p>Units move into the space they attack, occupying it.</p>
       </div>
 
-      <div data-demo="img/gifs/winning.gif">
+      <div class="demo-hover" data-demo="img/gifs/winning.gif" data-collection="the_rules">
         <h3>Winning</h3>
         <p>The game ends when one general is dead, or when it becomes impossible to kill either general.</p>
       </div>
 
-      <div data-demo="img/gifs/check.gif">
+      <div class="demo-hover" data-demo="img/gifs/check.gif" data-collection="the_rules">
         <h3>Check</h3>
         <p>After putting your opponent’s general in danger, you must announce the fact by saying “jiang” (”check” works too).</p>
         <p>Unlike in western Chess, it is possible to put your general in danger. It is up to the enemy to exploit your mistake.</p>
       </div>
 
-      <div data-demo="img/gifs/chasing.gif">
+      <div class="demo-hover" data-demo="img/gifs/chasing.gif" data-collection="the_rules">
         <h3>Chasing</h3>
         <p>There are a variety of rules that aim to prevent prepetual chasing, though the definition of “perpetual” differs from rule book to rule book.</p>
         <p>In general the side resorting to perpetual chasing can be ruled to have lost the game.</p>
@@ -480,7 +483,7 @@
   </div><!-- left side -->
 
   <figure class="col-xs-12 col-md-5">
-    <img class="demonstration" src="img/gifs/che-attack.gif">
+    <img class="demonstration" src="img/gifs/the_rules.gif" id="the_rules">
   </figure>
 </article>
 
@@ -499,6 +502,7 @@
 <script src="js/vendor/jquery.bxslider.min.js"></script>
 <script src="js/vendor/svg.min.js"></script>
 
+<script src="js/krigline-imageSwap.js"></script>
 <script src="js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
