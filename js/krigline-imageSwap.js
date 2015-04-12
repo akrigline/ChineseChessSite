@@ -17,7 +17,7 @@ function changeSrc() {
   var collection = $(this).attr('data-collection');
   var demoSrc = $(this).attr('data-demo');
 
-  console.log(this);
+  
 
   $demoImg = $('#' + collection);
 
