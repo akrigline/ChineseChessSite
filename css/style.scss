@@ -11,7 +11,7 @@ $blueDeep: #233D5F;
 $turquoise: #04C1DC;
 $orange: #FF8824;
 $green: #8FCA42;
-$red: rgb(105,52,51);
+$red: rgb(204,32,39);
 
 
 $light: rgb(255,255,255);
@@ -97,6 +97,21 @@ p {
 
   footer {
     font-size: .4em;
+  }
+}
+
+.demo-hover{
+  h3, h4{
+    transition:color 300ms;
+  }
+}
+
+.demo-active{
+  h3{
+    color:darken($red, 10%);
+  }
+  h4{
+    color:darken($red,0%);
   }
 }
 
