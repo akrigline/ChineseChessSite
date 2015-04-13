@@ -19,9 +19,9 @@ function changeSrc() {
               .fadeOut('300', function(){ 
                 $(this).attr('src', demoSrc)          //Apply the image to the placeholder
               })
-              .fadeIn('300');
-            $(this).addClass('demo-active');
-  }, 100)
+              .fadeIn('300')
+  }, 200);
+  $(this).addClass('demo-active');
   
 }
 
@@ -41,9 +41,9 @@ function changeBack() {
               })
               .fadeIn('300');       
             }, 500);
+  };
 
-    //Remove that Active class since it's no longer true
-    $(this).removeClass('demo-active');
-  }
+  //Remove that Active class since it's no longer true
+  $(this).removeClass('demo-active');
 
 }
