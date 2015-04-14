@@ -159,7 +159,12 @@ article {
   }
 }
 
+.demo-figure{
+  position:relative;
+}
+
 img.demonstration{
+  -webkit-backface-visibility:hidden; -webkit-transform: translateZ(0);
   width:100%;
   opacity:0;
   transition: all 500ms;
@@ -189,6 +194,7 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 /*** Navigation ***/
 
 .top-nav {
+  -webkit-backface-visibility:hidden; -webkit-transform: translateZ(0);
   margin-bottom: 0;
   background: none;
   border: none;
