@@ -25,4 +25,10 @@ $(document).ready(function(){
         controls: false,
         pagerCustom: '.pieces-list'
     });
+
+    // Initialize LocalScroll
+    $('.top-nav').localScroll({
+        duration:500,
+        hash:true,
+    });
 });

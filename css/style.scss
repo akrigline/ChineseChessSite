@@ -128,7 +128,7 @@ article {
   @include padTopBot(5em);
   min-height: 90%;
   position: relative;
-  z-index:-2;
+  z-index:-4;
   margin-bottom:-5em;
 }
 
@@ -333,7 +333,7 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   background-position: bottom center;
   background-repeat: no-repeat;
 
-  z-index: -2;
+  z-index: -3;
 }
 
 
