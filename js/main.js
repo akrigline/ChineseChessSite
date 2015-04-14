@@ -22,7 +22,7 @@ $(document).ready(function(){
     $('.pieces').bxSlider({
         mode: 'fade',
         speed: 300,
-        controls: true,
+        controls: false,
         pagerCustom: '.pieces-list'
     });
 });

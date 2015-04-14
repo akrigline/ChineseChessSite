@@ -23,7 +23,7 @@ $dark: rgb(25,25,25);
 }
 
 @mixin fadeBG($color) {
-  background-color:fade-out($color, .1);
+  background-color:fade-out($color, 0);
 }
 
 .faded {
@@ -78,16 +78,18 @@ h3 {
   font-size: 1.4em;
   font-weight: 600;
   @include serif;
+  margin-top:0;
 }
 
 h4 {
   font-size: 1em;
   font-weight: 600;
   @include sans;
+  margin-top: 0;
 }
 
 p {
-  margin-left: 2em;
+  //margin-left: 2em;
 }
 
 .seperator blockquote{
@@ -106,12 +108,14 @@ p {
   }
 }
 
-.demo-active{
-  h3{
-    color:darken($red, 10%);
-  }
-  h4{
-    color:darken($red,0%);
+.demo-hover{
+  &:hover{
+    h3{
+      color:darken($red, 10%);
+    }
+    h4{
+      color:darken($red,0%);
+    }
   }
 }
 
@@ -122,8 +126,10 @@ p {
 
 article {
   @include padTopBot(5em);
-  height: 100%;
+  min-height: 90%;
   position: relative;
+  z-index:-2;
+  margin-bottom:-7em;
 }
 
 .seperator {
@@ -133,14 +139,34 @@ article {
 .svg-top,
 .svg-bot {
   width: 100%;
+  z-index:0;
 }
-.svg-top{
+/*.svg-top{
   position: absolute;
   bottom: 0;
+}*/
+
+.demo-hover{
+  padding: 1em;
+  margin-bottom: .3em;
+  border-radius: .4em;
+  transition: all 500ms;
+  box-shadow: none;
+
+  &:hover{
+    background-color:$light;
+    box-shadow: 0 0 1em $mid inset;
+  }
 }
 
 img.demonstration{
   width:100%;
+  opacity:0;
+  transition: all 500ms;
+  position:absolute;
+  &.current{
+    opacity:1;
+  }
 }
 
 /*----------------------
@@ -167,6 +193,8 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   background: none;
   border: none;
   height: 5em;
+
+  z-index:-1;
 
   background-image: url(../img/header-nav-bg.svg);
   background-size: cover;
@@ -251,6 +279,8 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
+
+  z-index: -2;
 }
 
 
@@ -263,7 +293,7 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 /*** Seperators ***/
 .svg-top,
 .svg-bot {
-  opacity: .91;
+  //opacity: .905;
   overflow: hidden;
   svg {
     width: 110%;
@@ -354,13 +384,16 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
         width: 1.5em;
         height: 1.5em;
         display: inline-block;
-        
+        padding:0;
+        margin:0;
+
         border-radius: 50%;
         border: .1em solid $dark;
         &:hover,
         &.active{
           background-color: $dark;
           border-color: $dark;
+          box-shadow:none;
           .icon{
             color: $light;
           }
@@ -382,8 +415,11 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
       font-size: 4em;
       text-align: center;
     }
+    .demo-hover{
+      margin-left:2em;
+    }
     h4 {
-      margin-left: 2em;
+      //margin-left: 2em;
       margin-bottom: 0;
     }
   }

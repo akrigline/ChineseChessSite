@@ -10,38 +10,40 @@ $imgSwap.hover(
 
 function changeSrc() {
   var collection = $(this).attr('data-collection');   //Get the "Collection" of the trigger
-  $demoImg = $('#' + collection);                     //Find the placeholder applied to that collection
+  $demoImgCurrent = $('.demo-' + collection + '.current');
+  $demoImgNext = $('.demo-' + collection + '.next');
   var demoSrc = $(this).attr('data-demo');            //Get the image applied to the trigger
 
   clearTimeout(timerOut);                             //Stop the Timeout caused by mouseleave of a trigger
   timerIn = setTimeout(function(){
-            $demoImg
-              .fadeOut('300', function(){ 
-                $(this).attr('src', demoSrc)          //Apply the image to the placeholder
-              })
-              .fadeIn('300')
-  }, 200);
+
+      $demoImgCurrent.removeClass('current').addClass('next');
+
+      $demoImgNext.attr('src', demoSrc).addClass('current').removeClass('next');
+
+  }, 500);
+
   $(this).addClass('demo-active');
   
 }
 
 function changeBack() {
   var collection = $(this).attr('data-collection');   //Get the "Collection" of the trigger
-  $demoImg = $('#' + collection);                     //Find the placeholder applied to that collection
-  var demoOriginal = $demoImg.attr('data-original');  //Get the original image for the placeholder
+  
+  $demoImgCurrent = $('.demo-' + collection + '.current');
+  $demoImgNext = $('.demo-' + collection + '.next');
+
+  var demoOriginal = $demoImgNext.attr('data-original');  //Get the original image for the placeholder
 
 
   clearTimeout(timerIn);
   //We don't want the image to immediately revert, so we create a timer that can be cancelled
-  if ($demoImg.attr('src') != demoOriginal ) {
-    timerOut = setTimeout(function(){
-            $demoImg
-              .fadeOut('300', function(){ 
-                $(this).attr('src', demoOriginal)       //Apply the original image to the placeholder again
-              })
-              .fadeIn('300');       
-            }, 500);
-  };
+
+  timerOut = setTimeout(function(){
+          $demoImgCurrent.removeClass('current').addClass('next');
+          $demoImgNext.attr('src', demoOriginal).removeClass('next').addClass('current');       //Apply the original image to the placeholder again
+          }, 500);
+
 
   //Remove that Active class since it's no longer true
   $(this).removeClass('demo-active');
