@@ -181,6 +181,12 @@ img.demonstration{
   }
 }
 
+@media screen and (min-width:992px){
+  .demo-figure{
+    margin-top:2.5em;
+  }
+}
+
 /*----------------------
 ---- Section Aesthetics
 ----------------------*/
@@ -215,12 +221,33 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   background-repeat: no-repeat;
   .navbar-nav > li > a{
     color: $light;
+    padding:1em 2em;
 
     &:hover,
     &.active,
     &:focus{
       color: $dark;
-      background-color: $light;
+      background-image: url(../img/stroke.png);
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:100%;
+      background-color:transparent;
+    }
+  }
+  .navbar-nav > li.active > a{
+    background-color:transparent;
+    background-image: url(../img/stroke-2.png);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:100%;
+    &:hover,
+    &.active,
+    &:focus{
+      background-color:transparent;
+      background-image: url(../img/stroke-2.png);
+      background-repeat:no-repeat;
+      background-position:center center;
+      background-size:100%;
     }
   }
 
