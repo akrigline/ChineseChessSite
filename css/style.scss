@@ -213,8 +213,6 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   border: none;
   height: 5em;
 
-  z-index:-1;
-
   background-image: url(../img/header-nav-bg.svg);
   background-size: cover;
   background-position: bottom center;
@@ -260,18 +258,33 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   z-index: 999;
 
   &.collapsing{
-    border: 15px solid $red;
+    //border: 15px solid $red;
     background: none;
   }
 
   transition: all 300ms;
 
   &.in{
-    border: 15px $red solid;
+    //border: 15px $red solid;
+    li{
+      &.active a, 
+      a{
+        background-size: auto 100%;
+        //background-position:left;
+        &:hover,
+        &.active,
+        &:focus{
+          background-size: auto 100%;
+          //background-position:left;
+        }
+      }
+    }
   }
 
   box-shadow: none;
-  background-color: lighten($red, 15);
+  background-color: $dark;
+  text-align:center;
+  
 }
 
 
@@ -325,6 +338,11 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
 
 
 @media screen and (min-width:768px){
+  .top-nav{
+
+    z-index:-1;
+
+  }
   .navbar-collapse {
     background: none;
     margin-top: 0;
