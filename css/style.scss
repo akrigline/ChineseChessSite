@@ -161,6 +161,9 @@ article {
 
 .demo-figure{
   position:relative;
+  height:0;
+  width:100%;
+  padding-top:111%;
 }
 
 img.demonstration{
@@ -169,6 +172,10 @@ img.demonstration{
   opacity:0;
   transition: all 500ms;
   position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
   &.current{
     opacity:1;
   }
