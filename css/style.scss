@@ -217,6 +217,11 @@ http://css-tricks.com/snippets/css/retina-display-media-query */
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
+
+  &.atTop{
+    z-index:12;
+  }
+
   .navbar-nav > li > a{
     color: $light;
     padding:1em 2em;

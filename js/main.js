@@ -1,18 +1,19 @@
 $(document).ready(function() {
-    var s = $(".navbar-brand");
-
-    var sep = $(".seperator");
-    var art = $("article");
-
-    var pos_sep = sep.position();
-    var pos_art = art.position();
+    $s = $(".navbar-brand");
+    $topNav = $('.top-nav');
 
     $(window).scroll(function() {
         var windowpos = $(window).scrollTop();
         if (windowpos >= 100) {
-            s.addClass("moved");
+            $s.addClass("moved");
+            $topNav.removeClass('atTop');
         } else {
-            s.removeClass("moved");
+            $s.removeClass("moved");
+            if ( $topNav.hasClass('atTop') ){
+                
+            } else {
+                $topNav.addClass('atTop');
+            }
         }
     });
 });
